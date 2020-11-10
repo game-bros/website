@@ -12,7 +12,7 @@ const HomeBg = styled.div`
   top: 0;
 `;
 
-const HomeMainContent = styled.div`
+const HomeBase = styled.div`
   margin-top: 220px;
 
   .site-logo {
@@ -30,19 +30,17 @@ const HomeMainContent = styled.div`
 
 const Home = () => {
   return (
-    <div>
+    <HomeBase>
       <HomeBg></HomeBg>
       <ContentWrapper width="600px">
-        <HomeMainContent>
-          <img className="site-logo" src="/img/gamebros-logo.svg" alt="GameBros" />
-          <nav>
-            <HomeNavLink to="/games">Games</HomeNavLink>
-            <HomeNavLink to="/bros">Bros</HomeNavLink>
-            <HomeNavLink to="/blog">Blog</HomeNavLink>
-          </nav>
-        </HomeMainContent>
+        <img className="site-logo" src="/img/gamebros-logo.svg" alt="GameBros" />
+        <nav>
+          <HomeNavLink to="/games">Games</HomeNavLink>
+          <HomeNavLink to="/bros">Bros</HomeNavLink>
+          <HomeNavLink to="/blog">Blog</HomeNavLink>
+        </nav>
       </ContentWrapper>
-    </div>
+    </HomeBase>
   );
 };
 
