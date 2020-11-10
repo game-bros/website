@@ -2,11 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-type LinkProps = {
-  /** the location to link to */
-  readonly to: string;
-}
-
 const HomeNavLinkBase = styled.div`
   flex: 1;
   padding: 1em 0.5em;
@@ -71,6 +66,11 @@ const HomeNavLinkBase = styled.div`
     transform: translateY(0px);
   }
 `;
+
+type LinkProps = {
+  /** the location to link to */
+  readonly to: string;
+}
 
 const HomeNavLink: React.FC<LinkProps> = ({ to, children }) => {
   return (
