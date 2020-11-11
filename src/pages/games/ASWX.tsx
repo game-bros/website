@@ -12,7 +12,7 @@ const ASWX = () => {
             '/img/games/aswx/aswx4.png'
           ]}
           video="http://www.youtube.com/embed/LDeufC5mqTo?wmode=transparent"
-          download="download/ASWX.jar">
+          download="/download/ASWX.zip">
       <p>Choose your favourite ASCII character as your spaceship and become a lengendary spacepilot!</p>
       <p>In AswX your mission is to destroy your enemies while avoiding of getting hit yourself. There are over a hundred of different looking ships and a number of cool weapons and upgrades in the game. You can play AswX alone or with up to 4 players at once.</p>
     </Game>

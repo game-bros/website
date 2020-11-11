@@ -1,6 +1,7 @@
 import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ContentWrapper from '../common/ContentWrapper';
 import Page from '../common/Page';
@@ -119,9 +120,9 @@ const Game: React.FC<GameProps> = ({ children, title, titleBackground, video, do
                         height="100%"
                         src={video} />
               </div>}
-              {download && <a href={download} className="download">
+              {download && <Link className="download" to={download} target="_blank" download>
                 Download <span><FontAwesomeIcon icon={faWindows} /></span>
-              </a>}
+              </Link>}
             </aside>
             <div className="break"></div>
           </main>
