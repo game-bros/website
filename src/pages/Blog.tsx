@@ -1,8 +1,14 @@
 import React from 'react';
+import ContentWrapper from '../components/common/ContentWrapper';
+import Page from '../components/common/Page';
 
 const Blog = () => {
   return (
-    <div>Blog</div>
+    <Page title="Blog" titleBackground="rgb(209, 92, 92)">
+      <ContentWrapper>
+        insert blog posts here
+      </ContentWrapper>
+    </Page>
   );
 };
 

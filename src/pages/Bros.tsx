@@ -27,17 +27,17 @@ function Bros() {
           <p>GameBros is an independent game studio founded in 2007 by two brothers, Sensei and Batzy.</p>
           <BroContainer>
             <Bro name="Tero Malkki"
-                  title="Sensei"
+                  alias="Sensei"
                   role="Developer"
                   avatar="/img/sensei.png"
                   backgroundColor="rgb(209, 92, 92)"/>
             <Bro name="Toni Malkki"
-                  title="Batzy"
+                  alias="Batzy"
                   role="Artist"
                   avatar="/img/batzy.png"
                   backgroundColor="rgb(94, 92, 209)" />
             <Bro name="Rasmus Malkki"
-                  title="Kai"
+                  alias="Kai"
                   role="Tester"
                   backgroundColor="rgb(142, 209, 92)" />
           </BroContainer>

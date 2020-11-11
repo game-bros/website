@@ -21,15 +21,15 @@ const BroBase = styled.div<BroBaseProps>`
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   }
 
-  .title {
+  .alias {
     font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 2px;
     opacity: 0.9;
   }
 
-  .title::before,
-  .title::after {
+  .alias::before,
+  .alias::after {
     content: '"';
   }
 
@@ -51,20 +51,20 @@ type BroProps = {
   /** real name */
   readonly name: string;
   /** alias */
-  readonly title: string;
+  readonly alias: string;
   /** what the person does in the studio */
   readonly role: string;
   /** Optional. avatar of the bro card */
   readonly avatar?: string;
 }
 
-const Bro: React.FC<BroProps> = ({ backgroundColor, name, title, role, avatar }) => {
+const Bro: React.FC<BroProps> = ({ backgroundColor, name, alias, role, avatar }) => {
   return (
     <BroBase backgroundColor={backgroundColor}>
       <h2 className="name">{name}</h2>
-      <div className="title">{title}</div>
+      <div className="alias">{alias}</div>
       <div className="role">{role}</div>
-      {avatar && <img className="avatar" src={avatar} alt={title} />}
+      {avatar && <img className="avatar" src={avatar} alt={alias} />}
     </BroBase>
   );
 }
