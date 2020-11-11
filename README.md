@@ -1,6 +1,6 @@
 ![Image of Yaktocat](public/img/gamebros-logo.svg)
 
-Front-end client of the [game-bros.net](https://game-bros.net) website. Apart from some static parts, content of the website is managed through [Contentful](http://contentful.com).
+Front-end client of the [game-bros.net](https://game-bros.net) website. Blog content is managed through [Contentful](http://contentful.com).
 
 ## Getting Started
 
