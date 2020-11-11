@@ -11,7 +11,7 @@ const GameContainer = styled(ContentWrapper)`
 
 function Games() {
   return (
-    <Page title="Games" titleBackground="rgb(94 92 209)">
+    <Page title="Games" titleBackground="rgb(94, 92, 209)">
       <GameContainer>
         <div className="game">insert game here</div>
         <div className="game">insert another game here</div>

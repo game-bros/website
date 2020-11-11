@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 type WrapperProps = {
   /** max-width of the wrapped content area */
-  readonly width: string;
+  readonly width?: string;
 }
 
 const ContentWrapper = styled.div<WrapperProps>`

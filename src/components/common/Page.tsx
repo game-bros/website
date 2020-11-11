@@ -3,7 +3,9 @@ import Header from './Header';
 import PageTitle from './PageTitle';
 
 type PageProps = {
+  /** page header text */
   readonly title: string;
+  /** background of the page header. Can be a path to an image or a color */
   readonly titleBackground: string;
 }
 
