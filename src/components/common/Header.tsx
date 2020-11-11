@@ -75,7 +75,7 @@ const HeaderBase = styled.div`
   }
 `;
 
-function Header() {
+const Header = () => {
   return (
     <HeaderBase>
       <div className="fixed">
