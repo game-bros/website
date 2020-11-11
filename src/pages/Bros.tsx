@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Bro from '../components/Bro';
+import Bro from '../components/bros/Bro';
 import ContentWrapper from '../components/common/ContentWrapper';
 import Page from '../components/common/Page';
 

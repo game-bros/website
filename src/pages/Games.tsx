@@ -2,19 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import ContentWrapper from '../components/common/ContentWrapper';
 import Page from '../components/common/Page';
+import GameCard from '../components/games/GameCard';
 
 const GameContainer = styled(ContentWrapper)`
-  .game {
+  a {
     margin-top: 10px;
   }
 `;
 
-function Games() {
+const Games = () => {
   return (
     <Page title="Games" titleBackground="rgb(94, 92, 209)">
       <GameContainer>
-        <div className="game">insert game here</div>
-        <div className="game">insert another game here</div>
+        <GameCard title="Cool Bombers"
+              image="/img/games/coolbombers/cb4.png"
+              tags={['Windows']}
+              to="/games/coolbombers" />
+        <GameCard title="ASWX"
+              image="/img/games/aswx/aswx3.png"
+              tags={['Windows']}
+              to="/games/aswx" />
       </GameContainer>
     </Page>
   );
