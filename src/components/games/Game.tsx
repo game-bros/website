@@ -67,15 +67,15 @@ const GameBase = styled.div`
       flex-wrap: wrap;
       justify-content: space-evenly;
       margin: 0 -10px;
-    }
-  }
 
-  .screenshot {
-    flex: 1;
-    margin: 10px;
-    min-width: 180px;
-    border: solid 1px rgba(255, 255, 255, 0.1);
-    box-sizing: border-box;
+      > div {
+        flex: 1;
+        margin: 10px;
+        min-width: 180px;
+        border: solid 1px rgba(255, 255, 255, 0.1);
+        box-sizing: border-box;
+      }
+    }
   }
 
   @media only screen and (max-width: 600px) {
@@ -132,9 +132,7 @@ const Game: React.FC<GameProps> = ({ children, title, titleBackground, video, do
           <ContentWrapper>
             <div className="wrapper">
               {screenshots.map(screenshot => (
-                <div key={screenshot} className="screenshot" >
-                  <Screenshot image={screenshot} />
-                </div>
+                <Screenshot key={screenshot} image={screenshot} />
               ))}
             </div>
           </ContentWrapper>
