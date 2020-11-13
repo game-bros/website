@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.2",
+    "@contentful/rich-text-types": "^14.1.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
@@ -16,19 +18,20 @@
     "@types/react-dom": "^16.9.9",
     "@types/react-router-dom": "^5.1.6",
     "@types/styled-components": "^5.1.4",
+    "contentful": "^7.14.12",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "styled-components": "^5.2.1",
-    "typescript": "^4.0.5",
-    "web-vitals": "^0.2.4"
+    "typescript": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "codegen": "contentful-typescript-codegen --output src/schema/generated/contentful.d.ts"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +52,10 @@
     ]
   },
   "devDependencies": {
+    "contentful-management": "^6.3.0",
+    "contentful-typescript-codegen": "^3.2.1",
+    "dotenv-safe": "^8.2.0",
+    "prettier": "^2.1.2",
     "tslint": "^6.1.3"
   }
 }

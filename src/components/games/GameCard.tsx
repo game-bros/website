@@ -48,21 +48,16 @@ type GameCardBaseProps = {
 type GameCardProps = {
   /** header text */
   readonly title: string;
-  /** list of tags that are shown on the card */
-  readonly tags: string[];
   /** the location to link to */
   readonly to: string;
   /** path to an image that represents the game */
   readonly image: string;
 }
 
-const GameCard: React.FC<GameCardProps> = ({ title, tags, to, image }) => {
+const GameCard: React.FC<GameCardProps> = ({ title, to, image }) => {
   return (
     <GameCardBase to={to} image={image}>
         <h2 className="title">{title}</h2>
-        <div className="tags">
-          {tags.map(tag => <div key={tag} className="tag">{tag}</div>)}
-        </div>
     </GameCardBase>
   );
 }
