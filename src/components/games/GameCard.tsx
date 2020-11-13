@@ -45,7 +45,7 @@ type GameCardBaseProps = {
   readonly image: string;
 }
 
-type GameCardProps = {
+export type GameCardProps = {
   /** header text */
   readonly title: string;
   /** the location to link to */

@@ -6,3 +6,21 @@ const client = contentful.createClient({
 });
 
 export default client;
+
+/**
+ * Fetches single entry with the given slug
+ *
+ * NOTICE: To use this function the given content type MUST have a field called 'slug'
+ *
+ * @param contentType
+ * @param slug
+ */
+export async function getEntryBySlug<T>(contentType: string, slug: string): Promise<T | undefined> {
+  const response = await client.getEntries<T>({
+    content_type: contentType,
+    'fields.slug': slug,
+    include: 1
+  });
+
+  return response.items[0]?.fields;
+}

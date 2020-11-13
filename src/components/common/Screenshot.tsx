@@ -41,11 +41,13 @@ const ScreenshotBase = styled.div`
 `;
 
 type ScreenshotProps = {
-  /** path to screenshot image file */
+  /** url to screenshot image file */
   readonly image: string;
+  /** screenshot image alt text */
+  readonly alt: string;
 }
 
-const Screenshot: React.FC<ScreenshotProps> = ({image}) => {
+const Screenshot: React.FC<ScreenshotProps> = ({image, alt}) => {
   const [ enlarged, setEnlarge ] = useState(false);
 
   const toggleEnlarge = (event: React.MouseEvent) => {
@@ -56,13 +58,13 @@ const Screenshot: React.FC<ScreenshotProps> = ({image}) => {
   return (
     <ScreenshotBase onClick={toggleEnlarge}>
       <div className="screenshot">
-        <img src={image} alt="screenshot" />
+        <img src={image} alt={alt} />
       </div>
 
       {enlarged &&
         <div className="lightbox" onClick={toggleEnlarge}>
           <div className="wrapper">
-            <img src={image} alt="screenshot" />
+            <img src={image} alt={alt} />
           </div>
         </div>
       }

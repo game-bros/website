@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ContentWrapper from '../components/common/ContentWrapper';
 import Page from '../components/common/Page';
-import GameCard from '../components/games/GameCard';
+import GameCard, { GameCardProps } from '../components/games/GameCard';
 import client from '../ContentfulClient';
 import { IGameFields } from '../schema/generated/contentful';
 
@@ -12,17 +12,8 @@ const GameContainer = styled(ContentWrapper)`
   }
 `;
 
-type Game = {
-  /** Name of the game */
-  readonly title: string;
-  /** game cover image url */
-  readonly image: string;
-  /** path to game page */
-  readonly to: string;
-}
-
 const Games = () => {
-  const [games, setGames] = useState<Game[]>([]);
+  const [games, setGames] = useState<GameCardProps[]>([]);
 
   useEffect(() => {
     const fetchGames = async () => {
@@ -33,7 +24,7 @@ const Games = () => {
       setGames(response.items.map(game => ({
         title: game.fields.shortTitle,
         image: game.fields.coverImage.fields.file.url,
-        to: ''
+        to: '/games/' + game.fields.slug
       })));
     };
 
