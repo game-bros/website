@@ -45,7 +45,7 @@ Schema should never be updated manually. Always use the above script to generate
 
 ## Deployment
 
-GameBros website is automatically built and deployed to Netlify. You can learn more about Netlify from here [netlify.com](https://www.netlify.com).
+GameBros website is automatically built and deployed to Netlify. You can learn more about Netlify from their [website](https://www.netlify.com).
 
 Build command:
 
