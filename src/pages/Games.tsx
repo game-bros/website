@@ -34,11 +34,7 @@ const Games = () => {
   return (
     <Page title="Games" titleBackground="rgb(94, 92, 209)">
       <GameContainer>
-        {games.map(game => (
-          <GameCard key={game.title} title={game.title}
-            image={game.image}
-            to={game.to} />
-        ))}
+        {games.map(game => <GameCard key={game.title} {...game} />)}
       </GameContainer>
     </Page>
   );

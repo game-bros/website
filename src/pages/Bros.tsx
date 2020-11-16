@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Bro from '../components/bros/Bro';
+import Bro, { BroProps } from '../components/bros/Bro';
 import ContentWrapper from '../components/common/ContentWrapper';
 import Page from '../components/common/Page';
+import client from '../ContentfulClient';
+import { IBroFields } from '../schema/generated/contentful';
 
 const BroContainer = styled.div`
   display: flex;
@@ -20,26 +22,37 @@ const BroContainer = styled.div`
 `;
 
 function Bros() {
+  const [bros, setBros] = useState<BroProps[]>([]);
+
+  useEffect(() => {
+    const fetchBros = async () => {
+      const response = await client.getEntries<IBroFields>({
+        content_type: 'bro'
+      });
+
+      const entries = response.items
+        .map(bro => ({
+          name: bro.fields.name,
+          alias: bro.fields.alias,
+          role: bro.fields.role,
+          backgroundColor: bro.fields.color,
+          avatar: bro.fields.avatar?.fields.file.url
+        }))
+        .sort();
+
+      setBros(entries);
+    };
+
+    fetchBros();
+  }, []);
+
   return (
     <Page title="Bros" titleBackground="rgb(148, 92, 209)">
       <ContentWrapper>
         <main>
           <p>GameBros is an independent game studio founded in 2007 by two brothers, Sensei and Batzy.</p>
           <BroContainer>
-            <Bro name="Tero Malkki"
-                  alias="Sensei"
-                  role="Developer"
-                  avatar="/img/sensei.png"
-                  backgroundColor="rgb(209, 92, 92)"/>
-            <Bro name="Toni Malkki"
-                  alias="Batzy"
-                  role="Artist"
-                  avatar="/img/batzy.png"
-                  backgroundColor="rgb(94, 92, 209)" />
-            <Bro name="Rasmus Malkki"
-                  alias="Kai"
-                  role="Tester"
-                  backgroundColor="rgb(142, 209, 92)" />
+            {bros.map(bro => <Bro key={bro.alias} {...bro} />)}
           </BroContainer>
         </main>
       </ContentWrapper>

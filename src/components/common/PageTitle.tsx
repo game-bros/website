@@ -22,9 +22,7 @@ const PageTitleBase = styled.div<TitleBaseProps>`
   }
 `;
 
-type TitleBaseProps = {
-  readonly background: string;
-}
+type TitleBaseProps = Pick<TitleProps, 'background'>;
 
 type TitleProps = {
   /** header text */

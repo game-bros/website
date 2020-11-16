@@ -18,6 +18,9 @@ export interface IBroFields {
 
   /** avatar */
   avatar?: Asset | undefined;
+
+  /** order */
+  order?: number;
 }
 
 export interface IBro extends Entry<IBroFields> {

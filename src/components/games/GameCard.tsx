@@ -41,9 +41,7 @@ const GameCardBase = styled(Link)<GameCardBaseProps>`
   }
 `;
 
-type GameCardBaseProps = {
-  readonly image: string;
-}
+type GameCardBaseProps = Pick<GameCardProps, 'image'>;
 
 export type GameCardProps = {
   /** header text */

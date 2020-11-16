@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BroBase = styled.div<BroBaseProps>`
-  background-color: ${props => props.backgroundColor};
+
+  background-color: ${props => props.theme.colors[props.backgroundColor]};
   padding: 10px 25px;
   position: relative;
   min-height: 150px;
@@ -41,13 +42,11 @@ const BroBase = styled.div<BroBaseProps>`
     font-weight: 600;
   }
 `;
-type BroBaseProps = {
-  readonly backgroundColor: string;
-}
+type BroBaseProps = Pick<BroProps, 'backgroundColor'>;
 
-type BroProps = {
+export type BroProps = {
   /** background color of the bro card */
-  readonly backgroundColor: string;
+  readonly backgroundColor: 'blue' | 'red' | 'green' | 'purple';
   /** real name */
   readonly name: string;
   /** alias */
