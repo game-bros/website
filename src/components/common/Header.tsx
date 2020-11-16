@@ -89,7 +89,7 @@ const Header = () => {
             <ul>
               <li><HeaderLink to="/games">Games</HeaderLink></li>
               <li><HeaderLink to="/bros">Bros</HeaderLink></li>
-              <li><HeaderLink to="/blog">Blog</HeaderLink></li>
+              {/* <li><HeaderLink to="/blog">Blog</HeaderLink></li> */}
             </ul>
           </nav>
         </ContentWrapper>

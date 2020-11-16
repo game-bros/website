@@ -7,7 +7,7 @@ const HomeBg = styled.div`
   position: fixed;
   min-height: 100%;
   min-width: 100%;
-  background-color: blue;
+  background-color: ${props => props.theme.colors.blue};
   z-index: -1;
   top: 0;
 `;
@@ -37,7 +37,7 @@ const Home = () => {
         <nav>
           <HomeNavLink to="/games">Games</HomeNavLink>
           <HomeNavLink to="/bros">Bros</HomeNavLink>
-          <HomeNavLink to="/blog">Blog</HomeNavLink>
+          {/* <HomeNavLink to="/blog">Blog</HomeNavLink> */}
         </nav>
       </ContentWrapper>
     </HomeBase>
