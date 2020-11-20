@@ -20,11 +20,12 @@ const GameBase = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    flex-direction: column;
   }
 
   .description {
     flex: 5;
-    padding-right: 30px;
+    padding-right: 0;
     box-sizing: border-box;
   }
 
@@ -33,7 +34,8 @@ const GameBase = styled.div`
     flex: 3;
 
     .video-container iframe {
-      height: 220px;
+      min-height: 220px;
+      height: 12vw;
       min-width: 250px;
       box-sizing: border-box;
     }
@@ -66,7 +68,6 @@ const GameBase = styled.div`
   .screenshots {
     margin-top: 30px;
     padding: 20px;
-    background-color: black;
 
     .wrapper {
       display: flex;
@@ -84,14 +85,13 @@ const GameBase = styled.div`
     }
   }
 
-  @media only screen and (max-width: 600px) {
-    main,
-    .screenshots {
-      flex-direction: column;
+  @media only screen and ${props => props.theme.mediaQueries.tablet} {
+    main {
+      flex-direction: row;
     }
 
     .description {
-      padding-right: 0;
+      padding-right: 30px;
     }
   }
 `;

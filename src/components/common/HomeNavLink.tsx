@@ -4,18 +4,26 @@ import styled from 'styled-components';
 
 const HomeNavLinkBase = styled.div`
   flex: 1;
-  padding: 1em 0.5em;
+  font-size: 1.3em;
+  padding: 0.5em 0.5em;
   text-align: center;
   display: inline-block;
   box-sizing: border-box;
-  font-size: 1.5em;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: 0px 2px rgba(200, 200, 200, 0.15);
 
-  @media only screen and (max-width: 600px) {
-    font-size: 1.3em;
-    padding: 0.5em 0.5em;
+  @media only screen and ${props => props.theme.mediaQueries.tablet} {
+    padding: 1em 0.5em;
+    font-size: 1.5em;
+  }
+
+  @media only screen and ${props => props.theme.mediaQueries.desktop} {
+    font-size: 2em;
+  }
+
+  @media only screen and ${props => props.theme.mediaQueries.desktop} {
+    font-size: 3em;
   }
 
   a {

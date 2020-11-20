@@ -9,15 +9,15 @@ import { IBroFields } from '../schema/generated/contentful';
 const BroContainer = styled.div`
   display: flex;
   margin: 0 -10px;
-  flex-flow: row wrap;
+  flex-direction: column;
 
   > div {
-    flex: 0 1 38%;
+    flex: 0 1 calc(50% - 70px);
     margin: 10px;
   }
 
-  @media only screen and (max-width: 600px) {
-    flex-direction: column;
+  @media only screen and ${props => props.theme.mediaQueries.tablet} {
+    flex-flow: row wrap;
   }
 `;
 

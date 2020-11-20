@@ -11,6 +11,10 @@ const ContentWrapper = styled.div<WrapperProps>`
   box-sizing: border-box;
   padding: 0 10px;
   position: relative;
+
+  @media only screen and ${props => props.theme.mediaQueries.desktop} {
+    max-width: 60vw;
+  }
 `;
 
 export default ContentWrapper;

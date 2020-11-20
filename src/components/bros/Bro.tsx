@@ -2,17 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BroBase = styled.div<BroBaseProps>`
-
   background-color: ${props => props.theme.colors[props.backgroundColor]};
   padding: 10px 25px;
   position: relative;
   min-height: 150px;
   color: white;
 
+  @media only screen and ${props => props.theme.mediaQueries.desktop} {
+    min-height: 200px;
+  }
+
   .avatar {
     position: absolute;
     bottom: 0;
-    right: 5px;
+    right: 3%;
+    height: 70%;
   }
 
   .name {

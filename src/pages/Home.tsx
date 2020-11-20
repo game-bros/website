@@ -21,9 +21,10 @@ const HomeBase = styled.div`
 
   nav {
     display: flex;
+    flex-direction: column;
 
-    @media only screen and (max-width: 450px) {
-      flex-direction: column;
+    @media only screen and ${props => props.theme.mediaQueries.tablet} {
+      flex-direction: row;
     }
   }
 `;

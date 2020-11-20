@@ -7,7 +7,9 @@ const PageTitleBase = styled.div<TitleBaseProps>`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 180px;
+  min-height: 180px;
+
+  height: 10vw;
 
   div {
     height: 100%;
